@@ -1,4 +1,5 @@
 package org.example;
+import java.util.Locale;
 import java.util.Scanner;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
@@ -53,7 +54,7 @@ public class Main {
         System.out.println();
     }
     public static void main(String[] arg) {
-        Scanner scan = new Scanner(System.in);
+        Scanner scan = new Scanner(System.in).useLocale(Locale.US);
         int m = -1, n = -1, repeat;
 
         while(true){
