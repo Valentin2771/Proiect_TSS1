@@ -2,13 +2,15 @@ package org.example;
 import java.util.Scanner;
 import java.util.Arrays;
 import java.util.InputMismatchException;
+
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
-
 class MainTest {
 
     @Test
+    @DisplayName("Interclaseaza si cere input nou")
     void interclaseazaCuRepeat() {
         double[] vect1 = {1, -421, 0.7, 99, 0, 67.5, 66}; // Elemente ce trebuie sortate
         double[] vect2 = {3, 2, 1}; // Elemente ce trebuie sortate
@@ -32,6 +34,7 @@ class MainTest {
     }
 
     @Test
+    @DisplayName("Interclaseaza si stop")
     void interclaseazaFaraRepeat() {
         double[] vect1 = {1, -421, 0.7, 99, 0, 67.5,  66};
         double[] vect2 = {3, 2, 1};
@@ -49,6 +52,7 @@ class MainTest {
     }
 
     @Test
+    @DisplayName("Oprire la vect2 invalid")
     void exitVector2Invalid() {
         double[] vect1 = {1, -421, 0.7, 99, 0, 67.5, 66}; // Numere valide
         Object[] vect2 = {-8, "tty"}; // Contine o valoare non-numerică
@@ -61,6 +65,7 @@ class MainTest {
     }
 
     @Test
+    @DisplayName("Oprire la vect1 invalid")
     void exitVector1Invalid() {
         Object[] vect1 = {"ggw"}; // Primul element este non-numeric
         // double[] vect2 = {4.5, 1.0, -3.5}; // Numere valide care nu vor mai fi introduse
@@ -73,6 +78,7 @@ class MainTest {
     }
 
     @Test
+    @DisplayName("Cere input nou la n invalid")
     void cereInputNInvalid() {
         Scanner scan = new Scanner("7\n-1\n3\n4\n"); // Simulăm intrarea utilizatorului
         int new_m = scan.nextInt();
@@ -88,6 +94,7 @@ class MainTest {
     }
 
     @Test
+    @DisplayName("Cere input nou la m invalid")
     void cereInputMInvalid(){
         Scanner scan = new Scanner("-1\n2\n3\n4\n"); // Simulăm intrarea utilizatorului
         int new_m = scan.nextInt();
@@ -103,6 +110,7 @@ class MainTest {
     }
 
     @Test
+    @DisplayName("Exit la input n invalid")
     void exitNInputInvalid(){
         Scanner scan = new Scanner("7\nghi\n"); // Simulăm inputul utilizatorului
 
@@ -113,6 +121,7 @@ class MainTest {
     }
 
     @Test
+    @DisplayName("Exit la input m invalid")
     void exitMInputInvalid() {
         Scanner scan = new Scanner("qwe\n5\n"); // Simulăm inputul utilizatorului
 

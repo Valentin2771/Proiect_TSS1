@@ -20,5 +20,38 @@
             <version>5.11.1</version>
         </dependency>
     </dependencies>
-
+    <plugin>
+        <groupId>org.pitest</groupId>
+        <artifactId>pitest-maven</artifactId>
+        <version>1.15.0</version>
+        <configuration>
+            <targetClasses>
+                <param>org.example.Main</param>
+            </targetClasses>
+            <targetTests>
+                <param>org.example.MainTestJUnit5</param>
+            </targetTests>
+            <outputFormats>
+                <outputFormat>HTML</outputFormat>
+                <outputFormat>XML</outputFormat>
+            </outputFormats>
+        </configuration>
+    </plugin>
+    <configuration>
+        <targetClasses>
+            <param>org.example.Main</param>
+        </targetClasses>
+        <targetTests>
+            <param>org.example.MainTestJUnit5</param>
+        </targetTests>
+        <excludedMethods>
+            <excludedMethod>main</excludedMethod>
+        </excludedMethods>
+        <avoidCallsTo>
+            <avoidCallTo>java.lang.System</avoidCallTo>
+            <avoidCallTo>java.util.Scanner</avoidCallTo>
+        </avoidCallsTo>
+        <timeoutConstant>10000</timeoutConstant>
+        <threads>1</threads>
+    </configuration>
 </project>
